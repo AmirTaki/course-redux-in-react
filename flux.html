@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body style = "background-color: #242424; color:rgb(255, 99, 126) ;font-size: large;">
+    <p>
+        flux یک الکوی معماری (نه کتابخانه ) است که توسط فیس بوک معرفی شد تا مشکلات مدیرت State را  در برنامه های بزرک حل میکند هدف اصلی Flux  این است که جریان داده ها را در برنامه به صورت یک طرفه نکه دارد . این یعنی داده ها همیشه از یک مسیر مشخص حرکت میکنند
+    </p>
+    <hr />
+    <p>
+        وظیفه ریداکس مدیریت   state در پروژه است
+    </p>
+ 
+    <hr/>
+    <h3>اجزای اصلی معماری flux :</h3>
+    <h5>1- Action</h5>
+    <h5>2- Dispatcher</h5>
+    <h5>3- Store</h5>
+    <h5>4- View</h5>
+ 
+    <hr/>
+    <h3>Action :</h3>
+    <p> چیزی است که در برنامه اتفاق می افتد, یک action شامل نوع رویداد (type) واطلاعات مربوط به آن (payload) است</p>
+    <p>Example :
+        {type: 'ADD_TO_CART', payload: {productId: 1}}   
+    </p>
+
+    <hr />
+    <h3>ِDispatcher : </h3>
+    <p>مانند یک پیام رسان است که  action را به بخش های بعدی سیسیتم ارسال میکند</p>
+    
+    <hr />
+    <h3>Sotre:</h3>
+    <p>Store جایی است که State برنامه در آن ذخیره میشود</p>
+    <p>هرکاه یک Action از Dispatcher  دریافت  شود ، Store وضعیت را به روزرسانی میکند</p>
+    <p>مثلا اکر کاربر محصولی را به سبد خرید اضافه کند ،Store این محصول را به لیست خرید اضافه میکند</p>
+
+    <hr />
+    <h3>View: </h3>
+    <p>view همان چیزی است که کاربر روی صفحه میبیند</p>
+    <p>view ها داده ها را از Store دریافت میکند و state به روز رسانی شده را نمایش  میدهند</p>
+    <p>زمانی که Store تغییر کند ، View نیز به طور خودکار رندر میشود</p>
+
+    <hr />
+    <h3>جریان داده در flux (Flux Data Flow)</h3>
+    <h5>Flux از یک چرخه ساده و یک طرفه پیروی میکند: </h5>
+    <p>1. کاربر کاری انجام می دهد (مثلا کلیک روی دکمه)</p>
+    <p>2. یک Action ساخته می شود و به Dispatcher ارسال می شود</p>
+    <p>3. Dispatcher این Action را به Store ارسال می کند</p>
+    <p>4. Store وضعیت را تغییر می دهد</p>
+    <p>5. View وضعیت جدید را از State دریافت کرده و رندر می شود.</p>
+    <h4>این جریان یک طرفه باعث میشود که مدیریت وضیعت برنامه قابل پیش بینی تر و ساده تر است</h4>
+
+    <hr />
+    <h2>ارتباط Flux با Redux</h2>
+    <p>Redux ایده Flux را ساده تر و بهینه تر کرده است در واقع Redux نسخه بهبودیافته و مدرن تر Flux است</p>
+    <p>اگر چه Redux , Flux شباهت هایی دارند، Redux برخی از پیچیدگی های Flux را حذف کرده و استفاده از ان را راحت تر کرده است</p>
+
+    <hr />
+    <h2>شباهت های flux , redux</h2>
+    <p>هر دو از جریان یک طرفه استفاده میکنند</p>
+    <p>هر دو از Action برای توصیف اتفاقات استفاده می کنند</p>
+    <p>State در هر دو معماری در مکانی مشخص نکهداری میشود</p>
+
+    <hr />
+    <h2>تفاوت های مهم Redux با Flex </h2>
+    <h3 style = "color: greenyellow">
+        فقط یک Stateدر Redux وجود دارد
+    </h3>
+    <p>در Flux می توان چندین Store داشت اما در Redux فقط یک Store وجود دارد که تمام state های برنامه را مدیریت می کند</p>
+
+    <h3  style = "color: greenyellow">
+        Dispatcher در Redux حذف شده است
+    </h3>
+    <p>
+        Redux نیازی به Dispatcher ندارد ، زیرا Actionها مستقیما به Store ارسال میشوند
+    </p>
+    
+    <h3  style = "color: greenyellow">
+        تغییر state بکمک Reducer    
+    </h3>
+    <p>
+        در Store ، Flux مستقیما وضعیت را تغییر میدهند . اما در Redux ، تغییر وضعیت توسط Reducer انجام میشود
+    </p>
+
+    <h3  style = "color: greenyellow">
+        Immutable State
+    </h3>
+    <p>
+        در State ، Redux به طور مستقیم تغییر نمی کند . به جای آن ، هر بار که تغییرات رخ می دهد، یک نسخه جدید از state ایجاد می شود . این کار تست پذیری را بسیار ساده تر می کند
+    </p>
+
+    <hr />
+    <h1>  معماری Redux</h1>
+    <p>Actions -----> Reducer ------> Store -----> View  -----> Action </p>
+
+    <hr />
+    <h1>چرا Redux</h1>
+    <p>
+        <h3 style = "color: greenyellow"> :ساختار ساده تر</h3>
+        Redux از یک Store استفاده میکند و Dispatcher را حذف کرده است
+    </p>
+    <p>
+        <h3 style = "color: greenyellow">مدیرت بهینه وضعیت:</h3>
+         وضغیت به طور متمرکز در یک مکان ذخیره میشود ، که باعث میشود برنامه های پیچیده آسان تر مدیرت شوند
+    </p>
+    <p>
+        <h3 style = "color: greenyellow">ابزار جانبی قدرتمند :</h3>
+        Redux ابزار هایی مثل Redux DevTools ارائه میدهد که کمک می کند وضعیت را در زمان واقعی بررسی و اشکال زدایی کنید
+    </p>
+
+    <hr />
+    <h1>تفاوت Flux و Reudx</h1>
+    <table style="width: 100%; text-align: center;">
+        <tr>
+            <th>ویژگی</th>
+            <th>ّFlux</th>
+            <th>Redux</th>
+        </tr>
+        <tr>
+            <td>تعداد Storeها</td>
+            <td> چندین Store</td> 
+            <td> یک Store</td> 
+        </tr>
+        <tr>
+            <td>Dispatcher</td>
+            <td>نیاز دارد</td> 
+            <td>حذف شده </td> 
+        </tr>
+        <tr>
+            <td>مدیریت وضعیت</td>
+            <td>مستقیم توسط Store </td> 
+            <td> از طریق Reducerها</td> 
+        </tr>
+        <tr>
+            <td>Immutable State</td>
+            <td> ضروری نیست</td> 
+            <td> ضروری است</td> 
+        </tr>
+
+        
+    </table>
+</body>
+</html>
