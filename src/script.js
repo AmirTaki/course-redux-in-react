@@ -13,11 +13,21 @@ const store = {
         if(action.type === "ADD-TO-CART"){
             this.state.cart.push(action.payload)       
         }
+        else if (action.type === 'REMOVE-FROM-CART'){
+            this.state.cart.pop()
+        }
     }
 }
 
+function addToCart(product) {
+    return {type: "ADD-TO-CART", payload: product}
+}
 
-// console.log(store.state)
+function removeFromCart(product){
+    return {type: "REMOVE-FROM-CART", payload: product}
+}
 
-store.dispatch({type: "ADD-TO-CART", payload: "apple"})
+store.dispatch(addToCart('lenove'))
+store.dispatch(removeFromCart('lenove'))
+
 console.log(store.getState())
