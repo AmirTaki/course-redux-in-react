@@ -25,14 +25,14 @@ function App() {
       </button>
 
       <ul>
-        {users.map((user) => (
-          <li key = {user}>{user}</li>
+        {users.map((user, i) => (
+          <li key = {i}>{user}</li>
         ) )}
       </ul>
 
       <ul>
-        {proudcts.map((proudct) => (
-          <li key = {proudct}>{proudct}</li>
+        {proudcts.map((proudct, i) => (
+          <li key = {i}>{proudct}</li>
         ))}
       </ul>
 
