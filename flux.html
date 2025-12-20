@@ -222,6 +222,32 @@ table, th, td {
     <hr/>
     <h1> نصب Redux در React</h1>
     <p style="color: red" >npm install redux react-redux</p>
+
+    <hr />
+    <h1>مفهوم Reducer</h1>
+    <p>در Redux، یک reducer تابعی است که به عنوان ورودی state و action را دریافت می کندو یک state جدید بر میگرداند</p>
+
+    <hr />
+    <h1>مشکل Reducer بزرک</h1>
+    <p>در پروژه های بزرگ ممکن است یک reducer به تنهایی برای مدیریت تمام state اپلیکیشن کافی نباشد.</p>
+    <h3>چون :</h3>
+    <p>مدیریت همهی بخش های مختلف اپلیکیشن مانند کاربران، 
+        محصولات، تنظیمات و غیره در یک فایل ممکن است باعث پیچیدگی زیاد شود.
+    </p>
+    <hr />
+    <h2>مثال ساده </h2>
+    <p>فرض کنید که ما یک اپلیکیشن داریم که باید دو بخش مختلف
+        را مدیریت کند: کاربران و محصولات . 
+        به این صورت که: 
+    </p>
+    <p style="color: green;">یک بخش از state برای کاربران داریم.</p>
+    <p style="color: green;">یک بخش از state برای محصولات داریم.</p>
+
+    <p>در اینجا بجای یک reducer دو reducer ایجاد میکنیم و در نهایت از combineReducers استفاده می کنیم.</p>
+
+    <hr/>
+    <h1>ترکیب چند reducer با combineReducers</h1>
+    <p>در Redux از combineReducers استفاده می شود و این تابع به شما اجازه می دهد که چندین reducer را با هم ترکیب کنید، به طوری که هر reducer یک بخش خاص از state را مدیریت کند.</p>
 </body>
 <script src = "./src/script.js"></script>
 </html>
