@@ -248,6 +248,24 @@ table, th, td {
     <hr/>
     <h1>ترکیب چند reducer با combineReducers</h1>
     <p>در Redux از combineReducers استفاده می شود و این تابع به شما اجازه می دهد که چندین reducer را با هم ترکیب کنید، به طوری که هر reducer یک بخش خاص از state را مدیریت کند.</p>
+
+    <hr />
+    <h1>Middleware چیست ؟</h1>
+    <p>Middleware در Redux تابعی است که بین dispatch کردن اکشن و رسیدن آن به reducer قرار می گیرد. این امکان را به شما می دهد تا 
+        فرآیندهای میانی مانند ثبت لاگ، مدیریت عملیات غیر همزمان (async)، یا تغییر اکشن ها را انجام دهید.
+    </p>
+
+    <hr />
+    <h1>اهداف Middleware در Redux</h1>
+    <p><p style="color: greenyellow">1- افزودن قابلیت های اضافی :</p> مثلا ثبت لاگ هر اکشن</p>
+    <p><p style="color: greenyellow">2- مدیریت عملیات غیرهمزمان: </p>برای فراخوانی API یا کارهای زمان بر</p>
+    <p><p style="color: greenyellow">3- کنترل جریان داده: </p>بررسی یا تغییر داده های ورودی قبل از رسیدن به reducer</p>
+
+    <hr />
+    <h1>چند Middlewar آماده برای استفاده </h1>
+    <p><p style="color: aqua;">redux-logger: </p>برای ثبت لاگ اکشن ها و state</p>
+    <p><p style="color: aqua;">redux-thunk: </p>برای مدیریت عملیات غیر همزمان</p>
+    <p><p style="color: aqua;">redux-saga: </p>برای مدیریت فرآیندهای پیچیده تر</p>
 </body>
 <script src = "./src/script.js"></script>
 </html>
