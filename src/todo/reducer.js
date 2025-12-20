@@ -15,15 +15,12 @@ const toDoReducer = (state = initilState, action) => {
                     text: action.payload.text ,
                     id : uuidv4()
                 }
-                
             ]}
 
         case "REMOVE": 
-            return {...state, todos : [
-                ...state.todos.filter(
-                    (item) => { item.id !== action.payload.id}
-                )
-            ]}
+            return {...state, 
+                todos: [...state.todos.filter((item) => item.id !== action.payload.id )]
+            }
         default : 
             return state
     }

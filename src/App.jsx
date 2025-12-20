@@ -1,16 +1,15 @@
-import { Provider } from 'react-redux'
 import './App.css'
-import store from './todo/store'
+import ToDoAdderForm from './components/TodDoAdderForm'
+import ToDoList from './components/ToDoList'
 
 function App() {
 
-
   return (
-    <Provider store = {store}>
-      <div className="text-rose-400 ">
-        
-      </div>
-    </Provider>
+    <div className="text-rose-400">
+        <ToDoAdderForm />
+        <ToDoList />
+    </div>
+  
   )
 }
 
