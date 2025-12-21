@@ -1,38 +1,32 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useState } from 'react'
 import './App.css'
-import apiAction from './redux/actions'
+import { useDispatch, useSelector } from 'react-redux'
+import { AddToDo, RemoveToDo } from './redux/actions'
 
 function App() {
   
-  const dispatch =  useDispatch()
-  const {error, data, isLoading} =  useSelector((state) => state)
-
+  const {todos} = useSelector((state) => state)
+  const [text, setText] = useState('')
+  const dispatch =useDispatch()
   return (
-
+    
     <div className="text-rose-400">
+      <input type="text"  value = {text} className='border-2 border-green-500 px-3 py-2'
+        onChange={(e) => {setText(e.target.value)}}
+      />
       <button
-        onClick={()=> {dispatch(apiAction())}} 
-        className='text-green-600'>Click to send request</button>
-      <h1 className='text-blue-600'>Fetched Data: </h1>
+        onClick={() => {dispatch(AddToDo(text)); setText('')}}
+      >ADD</button>
 
-      {isLoading && 
-        <div className='text-white'>
-          Loading....
-        </div>
-      }
-    
-      { error & <div className='text-red-500'>Fetch no api</div>}
-    
       <ul>
-        {data.map((item)=> {
-          return(
-            <li key = {item.id}>
-              {item.title}
-            </li>
-          )
-        })}
-      </ul>
+        {todos.map((todo)=> (
+          <li key = {todo.id} className='flex'>
+            <p>{todo.text}</p>
+            <button onClick={() => {dispatch(RemoveToDo(todo.id))}}>REMOVE</button>
+          </li>
 
+        ))}
+      </ul>
       
     </div>
   )

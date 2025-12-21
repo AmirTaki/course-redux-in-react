@@ -1,24 +1,19 @@
 
 const initialState = {
-    isLoading: false, 
-    data: [],
-    error: null
+    todos : []
 }
 
-const APIReducer = (state = initialState, action) => {
+const ReducerToDo = (state = initialState, action) => {
     switch(action.type){
-        case "REQUEST":
-            return {...state, isLoading: true}
+        case "ADD":
+            return {...state, todos: [...state.todos ,{id: new Date(), text: action.payload.text }]}
 
-        case "SUCCESS":
-            return {...state, isLoading: false, data: action.payload.data}
+        case "REMOVE":
+            return {...state, todos: [...state.todos.filter((item) => item.id !== action.payload.id)]}
         
-        case "FAILURE":
-            return {...state, isLoading: false,  error: action.payload.error}
-       
         default: 
             return state
     }
 }
 
-export default APIReducer
+export default ReducerToDo;

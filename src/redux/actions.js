@@ -1,30 +1,10 @@
-// export const Request = () => {
-//     return {type : 'REQUEST'}
-// }
 
-// export const Success = (data) => {
-//     return {type: 'SUCCESS', payload: {data}}
-// }
-
-// export const Failure = (error) => {
-//     return {type: 'FAILURE', payload : {error}}
-// }
-
-
-const apiAction = () => {
-    return (dispatch) => {
-        dispatch({type : 'REQUEST'})
-
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then((response) => response.json())
-            .then((data) => {
-                dispatch({type : "SUCCESS", payload : {data}})
-            })
-            .catch((error) => {
-                dispatch({type : "FAILURE", payload: {error}})
-            })  
-          
-    }
+export const AddToDo = (text) => {
+    return {type: 'ADD', payload: {text}}
 }
 
-export default apiAction
+export const RemoveToDo = (id) => {
+    return {type: 'REMOVE', payload : {id}}
+}
+
+

@@ -17,4 +17,4 @@ createRoot(document.getElementById('root')).render(
 )
 
 
-// https://www.youtube.com/watch?v=hhfEtqkfgvw&list=PLBWTGJo8tIVjP0VY9GXNUzI49lCEDhkw0&index=15
+// https://www.youtube.com/watch?v=ZP-xMzbNzNc&list=PLBWTGJo8tIVjP0VY9GXNUzI49lCEDhkw0&index=16
