@@ -2,19 +2,19 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-
 import { Provider } from 'react-redux'
-import store from './store.js'
+import store from './redux/store.js'
 
 
 
 createRoot(document.getElementById('root')).render(
+
   <StrictMode>
     <Provider store = {store}>
-      <App />
+     <App />
     </Provider>
   </StrictMode>,
 )
 
 
-// https://www.youtube.com/watch?v=0y64vjWKKFM&list=PLBWTGJo8tIVjP0VY9GXNUzI49lCEDhkw0&index=14
+// https://www.youtube.com/watch?v=hhfEtqkfgvw&list=PLBWTGJo8tIVjP0VY9GXNUzI49lCEDhkw0&index=15

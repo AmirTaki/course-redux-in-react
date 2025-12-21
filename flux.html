@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid rgb(245, 245, 245);
   border-collapse: collapse;
 }
 </style>
@@ -270,6 +270,51 @@ table, th, td {
     <hr/>
     <h1>دستور نصب redux-logger</h1>
     <h4 style="color: red">npm install redux-logger</h4>
+
+    <hr />
+    <h1>اکشن های Redux</h1>
+    <p>معمولا در Redux اکشن ها به صورت ساده و همزمان هستند، یعنی یک اکشن یک شیء ارسال میکند که به استور می رود و 
+        وضعیت تغییر می کند.
+    </p>
+
+    <p>اما وقتی با درخواست های API یا سایر عملیات های زمان بر مواجه می شویم، نیاز داریم که 
+        بتوانیم اکشنی ارسال کنیم که بعدا اجرا شود یا منتظر نتیجه ای باشد. 
+    </p>
+
+    <hr />
+    <h1>تفاوت های اکسن همزمان و غیر همزمان</h1>
+    <p>
+        <p style="color: greenyellow">اکشن همزمان :</p>
+        بلافاصله اجرا می شود و وضعیت استور را فورا تغییر می دهد. هیچ تاخیری یا عملیات وابسته به زمان در آن وجود ندارد
+    </p>
+    <p>مثال اکشن همزمان: </p>
+    const addItem = (item) => {
+        return {type : 'ADD_ITEM', payload: item}
+    }
+
+    <p style="color: greenyellow">اکشن غیر همزمان : </p>
+    <p>برای کارهایی استفاده می شود که زمان بر هستند یا نیاز به عملیات خارجی دارند:،
+        مثل: ارسال درخواست به یک API
+    </p> 
+    
+
+    <p>این اکشن نمی تواند فورا نتیجه را به استور ارسال کندو نیاز به مدیریت مراحل مختلف دارد</p>
+    <p style="color: palevioletred;">(مثل شروع درخواست، دریافت موفقیت آمیز داده  ها ، یا برخورد با خطا)</p>
+
+    <hr />
+    <h1>Redux-Thunk</h1>
+    <p>Redux Thunk یک middleware در Redux است که به شما این امکان را می دهد که اکشن های غیر همزمان
+        (asynchronous actions) را به راحتی مدیریت کنید . 
+    </p>
+    <p>
+        با استفاده از redux-thunk ، شما می توانید به جای ارسال یک اکشن ساده ، یک فانکشن 
+        (function) ارسال کنید که به عنوان اکشن عمل کند.
+    </p>
+
+    <hr />
+    <h1>نصب Middlewar Redux Thunk</h1>
+    <p style="color: red">npm install redux-thunk</p>
+
 </body>
 <script src = "./src/script.js"></script>
 </html>
