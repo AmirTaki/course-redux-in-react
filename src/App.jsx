@@ -1,16 +1,33 @@
+import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
-import Task from './components/Task'
-import User from './components/User'
-function App() {
+import { postFetch } from './redux/postSlice'
+import { useEffect } from 'react'
 
+function App() {
+  const dispatch =  useDispatch()
+  const {posts, status} = useSelector((state) => state)
+
+  useEffect(() => {
+    dispatch(postFetch())
+    return() => {}
+  }, [])
+  
+  if(status === 'Loading...'){
+    return <h3 className='text-blue-500' >عملیات در حال انجام است</h3>
+  }
+  if(status === 'Failed...'){
+    return <h3 className='text-red-500'>عملیات با خطا مواجه شد</h3>
+  }
+  
   return (
     <div className="text-rose-400">
-      <h2>پروژه جدید با ریداکس</h2>
-      <hr />
-      <div className="flex gap-3">
-        <User />
-        <Task />
-      </div>
+      <ul>
+        {
+          posts.map((post) => (
+            <li key = {post.id}>{post.title}</li>
+          ))
+        }
+      </ul>
     </div>
   )
 }
