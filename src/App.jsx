@@ -1,23 +1,16 @@
-import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
-import counterSlice from './counterSlice'
-
+import Task from './components/Task'
+import User from './components/User'
 function App() {
-  const {value} =  useSelector((state) => state)
-  const dispatch =  useDispatch()
-  const {increase, decrease} = counterSlice.actions
+
   return (
     <div className="text-rose-400">
-      
-      <h1>Counter value is: {value}</h1>
-      
-      <button
-        onClick={() => {dispatch(increase())}}
-      >incrase</button>
-      
-      <button
-        onClick={() => {dispatch(decrease())}}
-      >decrase</button>
+      <h2>پروژه جدید با ریداکس</h2>
+      <hr />
+      <div className="flex gap-3">
+        <User />
+        <Task />
+      </div>
     </div>
   )
 }
