@@ -323,6 +323,40 @@ table, th, td {
         <p style="color: pink; display: inline;">جریان داده، state و اکشن های</p>
         یک برنامه Redux را در زمان واقعی بررسی و مدیریت کنند.
     </p>
+
+    <hr />
+    <h1>Redux Toolkit</h1>
+    <p>Redux Tookit ابزاری رسمی و قدرتمند است که توسط تیم Reudx برای ساده سازی و بهینه سازی فرآیند مدیریت state در برنامه ها ارائه شده است. 
+        این ابزار به توسعه دهندگان کمک می کند تا از  پیچیدگی های اضافی Redux
+        کلاسیک رها شوند و با کدی خواناتر، کارآمدترو ماژولاتر کار کنند.
+    </p>
+    
+    <hr />
+    <h1>مشکلات Redux کلاسیک</h1>
+    <p>طولانی بودن کد</p>
+    <p>مشکلات بهینه سازی</p>
+    <p>چالش های Async Actions</p>
+
+    <hr />
+    <h1>ویژگی های اصلی Redux Toolkit</h1>
+    <ul>
+        <li>configureStore</li>
+        <li>createSlice</li>
+        <li>createAsyncThunk</li>
+        <li>تغییر مستقیم state</li>
+    </ul>
+
+    <hr />
+    <h1>تغییر مستقیم state</h1>
+    <p>Redux Toolkit به طور پیش فرض از Immer استفاده میکند.</p>
+    <p>بنابراین، شما می توانید state را به ظاهر مستقیما تغییر دهید.</p>
+    <p>اما در واقعیت، Immer نسخه ای موقتی از state را ایجاد می کند و تغییرات را روی آن اعمال میکند</p>
+
+    <hr />
+    <h1> دستور نصب redux toolkit</h1>
+    <p style="color: red">
+        npm install @reduxjs/toolkit react-redux
+    </p>
 </body>
 <script src = "./src/script.js"></script>
 </html>
