@@ -1,33 +1,30 @@
-import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
-import { postFetch } from './redux/postSlice'
-import { useEffect } from 'react'
 
 function App() {
-  const dispatch =  useDispatch()
-  const {posts, status} = useSelector((state) => state)
 
-  useEffect(() => {
-    dispatch(postFetch())
-    return() => {}
-  }, [])
-  
-  if(status === 'Loading...'){
-    return <h3 className='text-blue-500' >عملیات در حال انجام است</h3>
-  }
-  if(status === 'Failed...'){
-    return <h3 className='text-red-500'>عملیات با خطا مواجه شد</h3>
-  }
-  
   return (
     <div className="text-rose-400">
-      <ul>
-        {
-          posts.map((post) => (
-            <li key = {post.id}>{post.title}</li>
-          ))
-        }
-      </ul>
+          <p> 925e242 ----  createAsyncThunk
+     </p> <p> a5c6283 ----  mini project redux-toolkit
+     </p> <p> 1847237 ----  Redux Toolkit
+     </p> <p> e8293e3 ----  Redux DevTools
+     </p> <p> 87f3352 ----  Redux Thunk
+     </p> <p> 62c60cc ----  Redux logger
+     </p> <p> 45a1a1a ----  Middleware
+     </p> <p> 9ba0c1d ----  combine Reducers
+     </p> <p> e02e501 ----  Local Storage in project ToDoList
+     </p> <p> 6e8ff2c ----  project ToDo part 2
+     </p> <p> 5a110fd ----  project ToDo part 1
+     </p> <p> 434bc12 ----  نصب و راه اندازی ریداکس part 2
+     </p> <p> b6eabbd ----  نصب و راه اندازی ریداکس part 1
+     </p> <p> adf6090 ----  جریان داده در ریداکس
+     </p> <p> f2ad5e5 ----  Reducer
+     </p> <p> cfeb605 ----  spread operator
+     </p> <p> 9ecdcd2 ----  Action
+     </p> <p> 0cc495d ----  State
+     </p> <p> 47128fb ----  Store
+     </p> <p> cacb066 ----  Redux Description</p>
+
     </div>
   )
 }
